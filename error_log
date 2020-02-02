@@ -1,0 +1,122 @@
+[09-Jul-2018 14:44:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 14:48:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 14:51:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 14:52:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 14:53:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 14:56:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 14:57:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 14:58:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 15:00:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/u5299636/public_html/c-pos/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/u5299636/public_html/c-pos/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/u5299636/public_html/c-pos/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/u5299636/public_html/c-pos/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/u5299636/public_html/c-pos/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/u5299636/public_html/c-pos/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/u5299636/public_html/c-pos/application/controllers/auth.php(5): CI_Controller->__construct()
+#7 /home/u5299636/public_html/c-pos/system/core/CodeIgniter.php(308): auth->__construct()
+#8 /home/u5299636/public_html/c-pos/index.php(202): require_once('/home/u5299636/...')
+#9 {main}
+  thrown in /home/u5299636/public_html/c-pos/system/database/drivers/mysql/mysql_driver.php on line 91
+[09-Jul-2018 16:11:46 UTC] PHP Parse error:  syntax error, unexpected ']', expecting end of file in /home/u5299636/public_html/c-pos/application/views/v_dashboard.php on line 96
+[09-Jul-2018 16:11:53 UTC] PHP Parse error:  syntax error, unexpected ']', expecting end of file in /home/u5299636/public_html/c-pos/application/views/v_dashboard.php on line 96
+[09-Jul-2018 16:12:13 UTC] PHP Parse error:  syntax error, unexpected ']', expecting end of file in /home/u5299636/public_html/c-pos/application/views/v_dashboard.php on line 96
+[09-Jul-2018 16:13:19 UTC] PHP Parse error:  syntax error, unexpected ']', expecting end of file in /home/u5299636/public_html/c-pos/application/views/v_dashboard.php on line 96
+[09-Jul-2018 16:13:23 UTC] PHP Parse error:  syntax error, unexpected ']', expecting end of file in /home/u5299636/public_html/c-pos/application/views/v_dashboard.php on line 96
