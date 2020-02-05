@@ -73,4 +73,27 @@ class model_order extends ci_model
                                 where detail_order.no_nota = $id
         ");
     }
+    function get_order_by_nomor($nomor){
+        return $this->db->query("select tbo.*, o.nama_lengkap as nama_operator, 
+        (
+            select sum(detail_order.harga*detail_order.qty) as total
+            from detail_order
+            where detail_order.no_nota = tbo.no_nota
+        ) total,
+        
+        case when tbo.is_selesai = '1' then
+        'Pesanan Selesai'
+        else
+        'Belum Selesai'
+        end as status_pesanan
+         from tb_order tbo
+        join operator o on o.operator_id = tbo.operator_id
+        where tbo.no_nota = '$nomor'");
+    }
+    function get_detail_order($nomor){
+        return $this->db->query("
+                            select * from detail_order do
+                            join barang_pesanan bp on do.barang_pesanan_id = bp.barang_pesanan_id
+                            where no_nota = $nomor");
+    }
 }
