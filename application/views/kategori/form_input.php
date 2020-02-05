@@ -1,7 +1,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
-                            POS (Point of Sale) <small>Tambah Data Barang</small>
+                            POS (Point of Sale) <small>Tambah Data Kategori Barang</small>
                         </h2>
                     </div>
                 </div> 
@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                         <div class="panel-heading">
-                                <center><img src="assets/img/logo.png"></center>
+                                <center><img src=""></center>
 
                             </div>
                            

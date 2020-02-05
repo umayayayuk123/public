@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "auth/login";
+$route['default_controller'] = "utama";
 $route['404_override'] = '';
 
 

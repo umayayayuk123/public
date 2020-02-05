@@ -1,5 +1,5 @@
 <?php
-class barang_pesanan extends CI_Controller{
+class Barang_pesanan extends CI_Controller{
     
     function __construct() {
         parent::__construct();

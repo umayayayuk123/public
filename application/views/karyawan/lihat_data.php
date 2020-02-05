@@ -17,11 +17,7 @@
                             <div class="panel-heading">
                                  <?php echo anchor('karyawan/post','Tambah Data',array('class'=>'btn btn-danger btn-sm')) ?>
                             </div>
-                            <div class="col-md-12">
-                                        <br>
-                                         <button type="submit" name="submit" class="btn btn-primary btn-sm pull-right"><i class="fa fa-save"></i> Simpan Data</button>
-                                            
-                                        </div>
+                            
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">

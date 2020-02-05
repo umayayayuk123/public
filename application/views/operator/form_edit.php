@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <?php echo form_open('operator/edit'); ?>
+                            <form action="<?=site_url('operator/edit')?>" method="POST">
                                 <input type="hidden" value="<?php echo $record['operator_id']?>" name="id">
                                 <div class="form-group">
                                     <label>Nama Lengkap</label>

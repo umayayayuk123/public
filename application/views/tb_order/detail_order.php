@@ -59,7 +59,7 @@
                     <?php $no=1; $total=0; foreach ($detail_order as $r){ ?>
                         <tr class="gradeU">
                             <td><?php echo $no ?></td>
-                            <td><?php echo get_barang($r->barang_pesanan_id,'nama_barang_pesanan') ?></td>
+                            <td><?php echo get_tb_order($r->barang_pesanan_id,'nama_barang_pesanan') ?></td>
                             <td><?php echo $r->qty ?></td>
                             <td>Rp. <?php echo number_format($r->harga,2) ?></td>
                             <td>Rp. <?php echo number_format($r->qty*$r->harga,2) ?></td>

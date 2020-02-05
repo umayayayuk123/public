@@ -30,11 +30,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Jumlah</label>
-                                    <input class="form-control" name="jumlah" placeholder="Jumlah / Sisa" required>
+                                    <input class="form-control" name="jumlah" placeholder="Jumlah" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Sisa</label>
-                                    <input class="form-control" name="sisa" placeholder="Jumlah / Sisa" required>
+                                    <input class="form-control" name="sisa" placeholder="Sisa" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Bayar</label>

@@ -19,8 +19,8 @@ class operator extends ci_controller{
         if(isset($_POST['submit'])){
             // proses data
             $operator_id         =  $this->input->post('operator_id',true);
-            $id_hak_akses         =  $this->input->post('id_id_hak_akses',true);
-            $nama       =  $this->input->post('nama',true);
+            $id_hak_akses         =  $this->input->post('id_hak_akses',true);
+            $nama       =  $this->input->post('nama_lengkap',true);
             $username   =  $this->input->post('username',true);
             $password   =  $this->input->post('password',true);
             $data       =  array(   'nama_lengkap'=>$nama,
@@ -38,7 +38,7 @@ class operator extends ci_controller{
     function edit()
     {
         if(isset($_POST['submit'])){
-            $operator_id         =  $this->input->post('operator_id',true);
+            $id         =  $this->input->post('operator_id');
             $id_hak_akses         =  $this->input->post('id_hak_akses',true);
             $nama       =  $this->input->post('nama',true);
             $username   =  $this->input->post('username',true);
@@ -55,9 +55,8 @@ class operator extends ci_controller{
              $this->db->where('operator_id',$id);
              $this->db->update('operator',$data);
              redirect('operator');
-        }
-        else{
-            $id_hak_akses=  $this->uri->segment(3);
+        }else{
+            $id=  $this->uri->segment(3);
             $data['record']=  $this->model_operator->get_one($id)->row_array();
             //$this->load->view('operator/form_edit',$data);
             $this->template->load('template','operator/form_edit',$data);

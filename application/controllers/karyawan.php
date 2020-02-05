@@ -14,7 +14,32 @@ class karyawan extends CI_Controller{
         $this->template->load('template','karyawan/lihat_data',$data);
     }
     
-   c
+   function post()
+    {
+       if(isset($_POST['submit'])){
+          
+            $ID_Karyawan       =   $this->input->post('ID_Karyawan');
+            $Nama   =   $this->input->post('Nama');
+            $Jenis_Kelamin      =   $this->input->post('jk');
+            $JOB     =   $this->input->post('JOB');
+            $data       = array('ID_Karyawan'=>$ID_Karyawan,
+                                'Nama'=>$Nama,
+                                'Jenis_Kelamin'=>$Jenis_Kelamin,
+                                'JOB'=>$JOB);
+                                
+                    
+            $this->model_karyawan->edit($data,$ID_Karyawan);
+            redirect('karyawan');
+        }
+       else{
+            $this->load->model('model_karyawan');
+            $data['karyawan']=  $this->model_karyawan->tampil_data()->result();
+            //$this->load->view('barang/form_input',$data);
+            $this->template->load('template','karyawan/form_input',$data);
+        }
+    }
+
+    
     
     function edit()
     {

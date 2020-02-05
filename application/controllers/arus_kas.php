@@ -1,5 +1,5 @@
 <?php
-class arus_kas extends CI_Controller{
+class Arus_kas extends CI_Controller{
     
     function __construct() {
         parent::__construct();

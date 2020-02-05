@@ -35,11 +35,11 @@
                                 </div>
                                  <div class="form-group">
                                     <label>Jumlah</label>
-                                    <input class="form-control" name="jumlah" value="<?php echo $record['jumlah_sisa']?>">
+                                    <input class="form-control" name="jumlah" value="<?php echo $record['jumlah']?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Sisa</label>
-                                    <input class="form-control" name="sisa" value="<?php echo $record['jumlah_sisa']?>">
+                                    <input class="form-control" name="sisa" value="<?php echo $record['sisa']?>">
                                 </div>
                                  <div class="form-group">
                                     <label>Bayar</label>

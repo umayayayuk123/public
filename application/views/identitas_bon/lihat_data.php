@@ -36,15 +36,15 @@
                                         <?php $no=1; foreach ($record->result() as $r) { ?>
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
-                                                <td><?php echo $r->ID_BON?></td>
+                                                <td><?php echo $r->no_nota?></td>
                                                 <td><?php echo $r->Nama?></td>
                                                 <td><?php echo $r->Instansi?></td>
                                                 <td><?php echo $r->Alamat?></td>
                                                 <td><?php echo $r->No_HP?></td>
                                                 
                                                 <td class="center">
-                                                    <?php echo anchor('identitas_bon/edit/'.$r->ID_BON,'Edit'); ?> | 
-                                                    <?php echo anchor('identitas_bon/delete/'.$r->ID_BON,'Delete'); ?>
+                                                    <?php echo anchor('identitas_bon/edit/'.$r->no_nota,'Edit'); ?> | 
+                                                    <?php echo anchor('identitas_bon/delete/'.$r->no_nota,'Delete'); ?>
                                                 </td>
                                             </tr>
                                         <?php $no++; } ?>

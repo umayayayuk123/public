@@ -14,7 +14,7 @@
                                 <?php echo form_open('operator/post'); ?>
                                  <div class="form-group">
                                     <label>ID Operator</label>
-                                    <input type="text" class="form-control" name="operator_id" placeholder="masukkan id operator" required>
+                                    <input type="text" class="form-control" name="id" placeholder="masukkan id operator" required>
                                 </div>
                                  <div class="form-group">
                                  <label>ID Hak Akses</label>
