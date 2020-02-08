@@ -12,11 +12,12 @@ class tb_order extends ci_controller{
         if(isset($_POST['submit']))
         {
             $this->model_order->simpan_barang();
+            // print_r($this->db->last_query());
             redirect('tb_order');
         }
         else
         {
-            $data['barang_pesanan']=  $this->model_barang_pesanan->tampil_data();
+            $data['barang_pesanan']=  $this->model_barang_pesanan->tampil_data()->result();
             $data['detail_order']= $this->model_order->tampilkan_detail_order(0)->result();
             $this->template->load('template','tb_order/form_order',$data);
         }

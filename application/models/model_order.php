@@ -5,12 +5,12 @@ class model_order extends ci_model
     
     function simpan_barang()
     {
-        $nama_barang_pesanan    =  $this->input->post('barang_pesanan');
+        $barang_pesanan_id    =  $this->input->post('nama_barang_pesanan');
         $qty            =  $this->input->post('qty');
-        $barang_pesanan_id       = $this->db->get_where('barang_pesanan',array('nama_barang_pesanan'=>$nama_barang_pesanan))->row_array();
-        $data           = array('barang_pesanan_id'=>$barang_pesanan_id['barang_pesanan_id'],
+        $barang       = $this->db->get_where('barang_pesanan',array('barang_pesanan_id'=>$barang_pesanan_id))->row_array();
+        $data           = array('barang_pesanan_id'=>$barang_pesanan_id,
                                 'qty'=>$qty,
-                                'harga'=>$barang_pesanan_id['harga'],
+                                'harga'=>$barang['harga'],
                                 'status'=>'0');
         $this->db->insert('detail_order',$data);
     }

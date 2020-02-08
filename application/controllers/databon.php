@@ -4,6 +4,7 @@ class databon extends CI_Controller{
     function __construct() {
         parent::__construct();
         $this->load->model('model_databon');
+        $this->load->model('model_barang');
         chek_session();
     }
 
@@ -43,6 +44,7 @@ class databon extends CI_Controller{
         else{
             $this->load->model('model_databon');
             $data['databon']=  $this->model_databon->tampil_data()->result();
+            $data['barang']=  $this->model_barang->tampil_data()->result();
             //$this->load->view('barang/form_input',$data);
             $this->template->load('template','databon/form_input',$data);
         }
@@ -53,24 +55,9 @@ class databon extends CI_Controller{
     {
        if(isset($_POST['submit'])){
             // proses barang
-            $tanggal       =   $this->input->post('tanggal');
             $no_nota   =   $this->input->post('no_nota');
-            $item_barang      =   $this->input->post('item_barang');
-            $QTY     =   $this->input->post('QTY');
-            $harga      =   $this->input->post('harga');
-            $jumlah      =   $this->input->post('jumlah');
             $bayar      =   $this->input->post('bayar');
-            $sisa      =   $this->input->post('sisa');
-            $status      =   $this->input->post('status');
-            $data       = array('tanggal'=>$tanggal,
-                                'no_nota'=>$no_nota,
-                                'item_barang'=>$item_barang,
-                                'QTY'=>$QTY,
-                                'harga'=>$harga,
-                                'jumlah'=>$jumlah,
-                                'bayar'=>$bayar,
-                                'sisa'=>$sisa,
-                                'status'=>$status);
+            $data       = array('bayar'=>$bayar);
                     
             $this->model_databon->edit($data,$no_nota);
             redirect('databon');

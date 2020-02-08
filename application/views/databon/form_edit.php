@@ -15,41 +15,33 @@
                                 <input type="hidden" name="id" value="<?php echo $record['no_nota']?>">
                                 <div class="form-group">
                                     <label>Tanggal</label>
-                                    <input class="form-control" type="date" name="tanggal" value="<?php echo $record['tanggal']?>">
+                                    <input class="form-control" type="date" name="tanggal" value="<?php echo $record['tanggal']?>" readonly>
                                 </div>
                                <div class="form-group">
                                     <label>No Nota</label>
-                                    <input class="form-control" name="no_nota" value="<?php echo $record['no_nota']?>">
+                                    <input class="form-control" name="no_nota" value="<?php echo $record['no_nota']?>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Item Barang</label>
-                                    <input class="form-control" name="item_barang" value="<?php echo $record['item_barang']?>">
+                                    <input class="form-control" name="item_barang" value="<?php echo get_barang($record['item_barang'],'nama_barang');?>" readonly>
                                 </div>
                                  <div class="form-group">
                                     <label>QTY</label>
-                                    <input class="form-control" name="QTY" value="<?php echo $record['QTY']?>">
+                                    <input class="form-control" name="QTY" value="<?php echo $record['QTY']?>" readonly>
                                 </div>
                                  <div class="form-group">
                                     <label>Harga</label>
-                                    <input class="form-control" name="harga" value="<?php echo $record['harga']?>">
+                                    <input class="form-control" name="harga" value="<?php echo $record['harga']?>" readonly>
                                 </div>
                                  <div class="form-group">
                                     <label>Jumlah</label>
-                                    <input class="form-control" name="jumlah" value="<?php echo $record['jumlah']?>">
+                                    <input class="form-control" name="jumlah" value="<?php echo $record['jumlah']?>" readonly>
                                 </div>
                                 <div class="form-group">
-                                    <label>Sisa</label>
-                                    <input class="form-control" name="sisa" value="<?php echo $record['sisa']?>">
-                                </div>
-                                 <div class="form-group">
                                     <label>Bayar</label>
                                     <input class="form-control" name="bayar" value="<?php echo $record['bayar']?>">
                                 </div>
-                                 <div class="form-group">
-                                    <label>Status</label>
-                                    <input class="form-control" name="status" value="<?php echo $record['status']?>">
-                                </div>
-
+                            
 
                                 <button type="submit" name="submit" class="btn btn-primary btn-sm">Update</button> | 
                                 <?php echo anchor('databon','Kembali',array('class'=>'btn btn-danger btn-sm'))?>

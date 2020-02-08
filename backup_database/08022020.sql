@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versi server:                 10.4.10-MariaDB - mariadb.org binary distribution
+-- Versi server:                 10.1.38-MariaDB - mariadb.org binary distribution
 -- OS Server:                    Win64
 -- HeidiSQL Versi:               9.4.0.5125
 -- --------------------------------------------------------
@@ -59,27 +59,27 @@ CREATE TABLE IF NOT EXISTS `barang` (
   `nama_barang` varchar(50) DEFAULT NULL,
   `harga` int(11) DEFAULT NULL,
   PRIMARY KEY (`barang_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=333 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=334 DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel e_pos.barang: ~6 rows (lebih kurang)
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
 INSERT INTO `barang` (`barang_id`, `kategori_id`, `nama_barang`, `harga`) VALUES
-	(321, 15, 'Mika Bening', 1200),
-	(322, 15, 'Bulpoin', 2000),
+	(326, 15, 'Mika Bening', 1200),
+	(327, 15, 'Bulpoin', 2000),
 	(328, 15, 'Penghapus', 500),
 	(329, 3, 'X Banner', 50000),
-	(331, 15, 'Kertas HVS', 500),
-	(332, 1, 'Kertas HVS', 5000);
+	(332, 1, 'Kertas HVS', 5000),
+	(333, 15, 'Lem ateko', 3000);
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.barang_pesanan
 CREATE TABLE IF NOT EXISTS `barang_pesanan` (
   `barang_pesanan_id` int(11) NOT NULL AUTO_INCREMENT,
-  `kategori_barpes_id` int(11) DEFAULT 0,
+  `kategori_barpes_id` int(11) DEFAULT '0',
   `nama_barang_pesanan` varchar(50) DEFAULT '0' COMMENT '1=sudah diproses, 0= belum diproses',
-  `harga` int(11) DEFAULT 0,
+  `harga` int(11) DEFAULT '0',
   PRIMARY KEY (`barang_pesanan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel e_pos.barang_pesanan: ~7 rows (lebih kurang)
 /*!40000 ALTER TABLE `barang_pesanan` DISABLE KEYS */;
@@ -90,7 +90,8 @@ INSERT INTO `barang_pesanan` (`barang_pesanan_id`, `kategori_barpes_id`, `nama_b
 	(7, 0, 'Kertas AP', 10000),
 	(8, 0, 'Kertas AP', 100000),
 	(9, 1, 'Sampul Hot Print', 50000),
-	(10, 5, 'Kertas AP', 100000);
+	(10, 5, 'Kertas AP', 100000),
+	(11, 3, 'Buku Yasim', 10000);
 /*!40000 ALTER TABLE `barang_pesanan` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.customer
@@ -117,14 +118,14 @@ CREATE TABLE IF NOT EXISTS `databon` (
   `bayar` int(50) NOT NULL,
   `status` enum('Y','N') NOT NULL,
   PRIMARY KEY (`no_nota`)
-) ENGINE=InnoDB AUTO_INCREMENT=98988003 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=98988006 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel e_pos.databon: ~2 rows (lebih kurang)
+-- Membuang data untuk tabel e_pos.databon: ~3 rows (lebih kurang)
 /*!40000 ALTER TABLE `databon` DISABLE KEYS */;
 INSERT INTO `databon` (`tanggal`, `no_nota`, `item_barang`, `QTY`, `harga`, `jumlah`, `sisa`, `bayar`, `status`) VALUES
-	('2020-02-12', 98988000, 'Banner', 10, 100000, 200000000, 1111, 100000, ''),
-	('2020-02-04', 98988001, 'Sampul Hot Print', 500, 50000, 250000000, 20000000, 5000000, ''),
-	('2020-12-01', 98988002, 'Cetak Umbul Umbul', 300, 30000, 9000000, 6000000, 3000000, '');
+	('2020-02-01', 98988004, '328', 500, 500, 250000, 0, 50000, ''),
+	('2020-02-22', 98988005, '326', 10, 1200, 12000, 0, 10000, ''),
+	('2020-02-22', 98988006, '333', 10, 3000, 3000, 0, 3000, '');
 /*!40000 ALTER TABLE `databon` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.data_job_karyawan
@@ -134,13 +135,15 @@ CREATE TABLE IF NOT EXISTS `data_job_karyawan` (
   `nama_karyawan_job` varchar(50) DEFAULT NULL,
   `harga` int(11) DEFAULT NULL,
   PRIMARY KEY (`job_karyawan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel e_pos.data_job_karyawan: ~2 rows (lebih kurang)
 /*!40000 ALTER TABLE `data_job_karyawan` DISABLE KEYS */;
 INSERT INTO `data_job_karyawan` (`job_karyawan_id`, `kategori_job_id`, `nama_karyawan_job`, `harga`) VALUES
 	(2, NULL, 'ngetik', 50000),
-	(3, NULL, 'ngetik', 1000);
+	(3, NULL, 'ngetik', 1000),
+	(4, NULL, 'Design', 50000),
+	(5, NULL, 'Design', 50000);
 /*!40000 ALTER TABLE `data_job_karyawan` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.data_kategori_job
@@ -148,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `data_kategori_job` (
   `kategori_job_id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_kategori_job` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`kategori_job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel e_pos.data_kategori_job: ~4 rows (lebih kurang)
 /*!40000 ALTER TABLE `data_kategori_job` DISABLE KEYS */;
@@ -156,16 +159,17 @@ INSERT INTO `data_kategori_job` (`kategori_job_id`, `nama_kategori_job`) VALUES
 	(1, 'Design'),
 	(2, 'Editing'),
 	(3, 'Pengetikan'),
-	(4, 'Lain - Lain');
+	(4, 'Lain - Lain'),
+	(5, 'Percetakan');
 /*!40000 ALTER TABLE `data_kategori_job` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.detail_arus_kas
 CREATE TABLE IF NOT EXISTS `detail_arus_kas` (
   `t_aruskas_id` int(11) NOT NULL AUTO_INCREMENT,
-  `job_karyawan_id` int(11) NOT NULL DEFAULT 0,
-  `qty` int(11) NOT NULL DEFAULT 0,
-  `aruskas_id` int(11) NOT NULL DEFAULT 0,
-  `harga` int(11) NOT NULL DEFAULT 0,
+  `job_karyawan_id` int(11) NOT NULL DEFAULT '0',
+  `qty` int(11) NOT NULL DEFAULT '0',
+  `aruskas_id` int(11) NOT NULL DEFAULT '0',
+  `harga` int(11) NOT NULL DEFAULT '0',
   `status` enum('0','1') NOT NULL DEFAULT '0' COMMENT '1= sudah diproses , 0 belum diproses',
   PRIMARY KEY (`t_aruskas_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -183,9 +187,9 @@ CREATE TABLE IF NOT EXISTS `detail_order` (
   `harga` int(11) NOT NULL,
   `status` enum('0','1') DEFAULT NULL COMMENT '1= sudah diproses , 0 belum diproses',
   PRIMARY KEY (`t_detail_order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel e_pos.detail_order: ~6 rows (lebih kurang)
+-- Membuang data untuk tabel e_pos.detail_order: ~8 rows (lebih kurang)
 /*!40000 ALTER TABLE `detail_order` DISABLE KEYS */;
 INSERT INTO `detail_order` (`t_detail_order_id`, `barang_pesanan_id`, `qty`, `no_nota`, `harga`, `status`) VALUES
 	(2, 4, 6, 14, 3000, '1'),
@@ -193,7 +197,10 @@ INSERT INTO `detail_order` (`t_detail_order_id`, `barang_pesanan_id`, `qty`, `no
 	(4, 4, 100, 14, 3000, '1'),
 	(5, 9, 400, 15, 50000, '1'),
 	(6, 4, 66, 16, 3000, '1'),
-	(7, 4, 8888, 16, 3000, '1');
+	(7, 4, 8888, 16, 3000, '1'),
+	(14, 4, 2, 0, 3000, '0'),
+	(20, 11, 3, 0, 10000, '0'),
+	(21, 9, 100, 0, 50000, '0');
 /*!40000 ALTER TABLE `detail_order` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.hak_akses
@@ -221,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `identitas_bon` (
   PRIMARY KEY (`no_nota`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel e_pos.identitas_bon: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel e_pos.identitas_bon: ~0 rows (lebih kurang)
 /*!40000 ALTER TABLE `identitas_bon` DISABLE KEYS */;
 INSERT INTO `identitas_bon` (`no_nota`, `Nama`, `Instansi`, `Alamat`, `No_HP`) VALUES
 	('BON006', 'Azkia Nur Farida', 'Pembkab Bojonegoro', 'Bojonegoro', 97645554);
@@ -270,17 +277,18 @@ CREATE TABLE IF NOT EXISTS `kategori_barang_pesanan` (
   `kategori_barpes_id` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `nama_kategori_barpes` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`kategori_barpes_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel e_pos.kategori_barang_pesanan: ~6 rows (lebih kurang)
 /*!40000 ALTER TABLE `kategori_barang_pesanan` DISABLE KEYS */;
 INSERT INTO `kategori_barang_pesanan` (`kategori_barpes_id`, `nama_kategori_barpes`) VALUES
-	(00000000001, 'Laser'),
+	(00000000001, 'Cetak Laser'),
 	(00000000002, 'Art Paper'),
 	(00000000003, 'Cetak Buku'),
 	(00000000004, 'Sticker'),
 	(00000000005, 'Sablon'),
-	(00000000006, 'Cetak AP');
+	(00000000006, 'Cetak AP'),
+	(00000000007, 'Banner');
 /*!40000 ALTER TABLE `kategori_barang_pesanan` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.operator
@@ -294,13 +302,14 @@ CREATE TABLE IF NOT EXISTS `operator` (
   PRIMARY KEY (`operator_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel e_pos.operator: 4 rows
+-- Membuang data untuk tabel e_pos.operator: 5 rows
 /*!40000 ALTER TABLE `operator` DISABLE KEYS */;
 INSERT INTO `operator` (`operator_id`, `id_hak_akses`, `nama_lengkap`, `username`, `password`, `last_login`) VALUES
-	('OP003', 'HA02', 'Asma Binnuril Qolbi', 'Asma', 'ecd60eb22cf6c82b8c296694fe46a413', '2020-02-05'),
-	('OP004', 'HA02', 'Yayuk Umaya', 'Maya', 'ecd60eb22cf6c82b8c296694fe46a413', '2020-02-05'),
-	('OP001', 'HA01', 'MasyaaAllah', 'Shasa', '78b318cfbc9c02945a5f7a39af4e72d7', '2020-02-05'),
-	('OP002', 'HA01', 'Faiz Alka', 'Faiz', '78b318cfbc9c02945a5f7a39af4e72d7', '2020-02-05');
+	('OP003', 'HA02', 'Asma Binnuril Qolbi', 'Asma', 'ecd60eb22cf6c82b8c296694fe46a413', '2020-02-08'),
+	('OP004', 'HA02', 'Yayuk Umaya', 'Maya', 'ecd60eb22cf6c82b8c296694fe46a413', '2020-02-08'),
+	('OP001', 'HA01', 'MasyaaAllah', 'Shasa', '78b318cfbc9c02945a5f7a39af4e72d7', '2020-02-08'),
+	('OP002', 'HA01', 'Faiz Alka', 'Faiz', '78b318cfbc9c02945a5f7a39af4e72d7', '2020-02-08'),
+	('', '', '0', 'yayukumaya', '719fe28004fcdd81a820602924aa8074', '2020-02-08');
 /*!40000 ALTER TABLE `operator` ENABLE KEYS */;
 
 -- membuang struktur untuk table e_pos.pesanan
@@ -361,11 +370,10 @@ CREATE TABLE IF NOT EXISTS `transaksi` (
   PRIMARY KEY (`transaksi_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel e_pos.transaksi: 5 rows
+-- Membuang data untuk tabel e_pos.transaksi: 4 rows
 /*!40000 ALTER TABLE `transaksi` DISABLE KEYS */;
 INSERT INTO `transaksi` (`transaksi_id`, `tanggal_transaksi`, `operator_id`, `nama_customer`) VALUES
 	(27, '2020-02-04', 'OP001', 'Ibu Diah'),
-	(17, '2018-07-05', 'OP002', 'Hamba Allah ^_^'),
 	(19, '2018-11-25', 'OP001', 'Yayuk Umaya'),
 	(23, '2020-02-01', 'OP002', 'Faiz'),
 	(26, '2020-02-03', 'OP001', 'Alka');
@@ -375,7 +383,7 @@ INSERT INTO `transaksi` (`transaksi_id`, `tanggal_transaksi`, `operator_id`, `na
 CREATE TABLE IF NOT EXISTS `transaksi_aruskas` (
   `aruskas_id` int(11) NOT NULL AUTO_INCREMENT,
   `tanggal_kas` varchar(50) NOT NULL DEFAULT '0',
-  `operator_id` int(11) NOT NULL DEFAULT 0,
+  `operator_id` int(11) NOT NULL DEFAULT '0',
   `nama_customer` varchar(50) DEFAULT '0',
   PRIMARY KEY (`aruskas_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -395,12 +403,9 @@ CREATE TABLE IF NOT EXISTS `transaksi_detail` (
   PRIMARY KEY (`t_detail_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel e_pos.transaksi_detail: 22 rows
+-- Membuang data untuk tabel e_pos.transaksi_detail: 18 rows
 /*!40000 ALTER TABLE `transaksi_detail` DISABLE KEYS */;
 INSERT INTO `transaksi_detail` (`t_detail_id`, `barang_id`, `qty`, `transaksi_id`, `harga`, `status`) VALUES
-	(45, 322, 500, 17, 2000, NULL),
-	(66, 322, 400, 27, 2000, '1'),
-	(65, 321, 100, 27, 1200, '1'),
 	(40, 328, 100, 15, 500, NULL),
 	(39, 322, 100, 15, 2000, NULL),
 	(38, 211, 5, 15, 3500, NULL),
@@ -418,7 +423,6 @@ INSERT INTO `transaksi_detail` (`t_detail_id`, `barang_id`, `qty`, `transaksi_id
 	(57, 322, 100, 23, 2000, NULL),
 	(58, 122, 100, 24, 1000, '1'),
 	(64, 331, 8888, 27, 500, '1'),
-	(63, 322, 10, 26, 2000, '1'),
 	(62, 328, 100, 26, 500, '1');
 /*!40000 ALTER TABLE `transaksi_detail` ENABLE KEYS */;
 

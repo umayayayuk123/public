@@ -42,13 +42,18 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Nama Barang</label>
                                         <div class="col-sm-10">
-                                          <input list="barang_pesanan" name="nama_barang_pesanan" placeholder="masukan nama barang" class="form-control">
+                                            <select name="nama_barang_pesanan" id="nama_barang_pesanan" class="form-control" required>
+                                                <option value="">- Pilih Barang Pesanan -</option>
+                                                <?php  foreach($barang_pesanan as $bp){ ?>
+                                                    <option value="<?=$bp->barang_pesanan_id?>"><?=$bp->nama_barang_pesanan?></option>
+                                                <?php } ?>
+                                            </select>   
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Quantity</label>
                                         <div class="col-sm-10">
-                                          <input type="text" name="qty" placeholder="QTY" class="form-control">
+                                          <input type="text" name="qty" placeholder="QTY" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -57,13 +62,6 @@
                                         </div>
                                     </div>
                                 </form>
-
-                                <datalist id="barang_pesanan">
-                                    <?php foreach ($barang_pesanan->result() as $b) {
-                                        echo "<option value='$b->nama_barang_pesanan'>";
-                                    } ?>
-                                    
-                                </datalist>
                             </div>
                         </div>
                         <!-- /. PANEL  -->

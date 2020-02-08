@@ -98,11 +98,9 @@
                           bidang keahlian perusahaan kami.<br>
                         </p>
                       </center>
-                      <br>
-                      <center><small><b>*) Untuk Mendapatkan Informasi Update Terbaru Silahkan Daftar</b></small>
-                      </center><br>
+                      
                       <center>
-                        <a href="#" class="hvr-bounce-to-right btn btn-default"> Daftar</a>
+                       <br>
                         <a href="<?=site_url('Auth/login')?>" class="hvr-bounce-to-right btn btn-default"> Login
                           Administrasi</a>
                         <a class="hvr-bounce-to-right btn btn-default" data-toggle="modal"

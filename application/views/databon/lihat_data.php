@@ -41,14 +41,14 @@
                                                 <td><?php echo $no ?></td>
                                                 <td><?php echo $r->tanggal ?></td>
                                                 <td><?php echo $r->no_nota ?></td>
-                                                <td><?php echo $r->item_barang ?></td>
+                                                <td><?php echo $r->nama_barang ?></td>
                                                 <td><?php echo $r->QTY ?></td>
 
                                                 <td>Rp. <?php echo number_format($r->harga,2) ?></td>
                                                 <td>Rp. <?php echo number_format($r->jumlah,2) ?></td>
                                                 <td>Rp. <?php echo number_format($r->bayar,2) ?></td>
-                                                <td>Rp. <?php echo number_format($r->sisa,2) ?></td>
-                                               <td ><?php echo $r->status ?></td>
+                                                <td>Rp. <?php echo number_format($r->sisa_pembayaran,2) ?></td>
+                                               <td ><?php echo $r->status_pembayaran ?></td>
 
 
 

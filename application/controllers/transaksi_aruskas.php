@@ -16,7 +16,7 @@ class transaksi_aruskas extends ci_controller{
         }
         else
         {
-            $data['data_job_karyawan']=  $this->model_data_job_karyawan->tampil_data();
+            $data['model_data_job_karyawan']=  $this->model_data_job_karyawan->tampil_data();
             $data['detail']= $this->model_transaksi_aruskas->tampilkan_detail_transaksi(0)->result();
             $this->template->load('template','transaksi_aruskas/form_transaksi',$data);
         }

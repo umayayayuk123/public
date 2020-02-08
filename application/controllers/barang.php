@@ -68,4 +68,11 @@ class Barang extends CI_Controller{
         $this->model_barang->delete($id);
         redirect('barang');
     }
+
+    function get_barang_by_id_return_json(){
+        $id_barang = $this->input->post('id_barang');
+        $barang = $this->db->get_where('barang', array('barang_id'=>$id_barang));
+        $response['barang'] = $barang->row_array(); 
+        echo json_encode($response);
+    }
 }

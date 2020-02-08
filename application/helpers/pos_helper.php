@@ -27,7 +27,11 @@ function get_akses($id,$record)
     $q = $CI->db->get_where('hak_akses', array('id_hak_akses' => $id))->row_array();
     return $q[$record];
 }
-
+function get_tb_order($id,$record){
+    $CI =& get_instance();
+    $q = $CI->db->get_where('barang_pesanan', array('barang_pesanan_id' => $id))->row_array();
+    return $q[$record];
+}
 function chek_session_login()
 {
     $CI= & get_instance();

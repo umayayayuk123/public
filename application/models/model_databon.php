@@ -4,7 +4,15 @@ class model_databon extends ci_model{
     
     function tampil_data()
     {
-        return $this->db->query("select * from databon");
+        return $this->db->query("select *, (select jumlah - bayar) as sisa_pembayaran, 
+                            case when jumlah > bayar then
+                            'Belum Lunas'
+                            else
+                            'Lunas'
+                            end as status_pembayaran, brg.nama_barang
+                            from databon dt
+                            join barang brg on brg.barang_id = dt.item_barang
+        ");
                 
     
     }
