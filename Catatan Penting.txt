@@ -1,0 +1,10 @@
+Jika mau presentasi matikan error reportingnya
+
+index.php -> buat mode production (baris 21)
+application/config/database.php -> db_debug set ke false
+
+
+Jika mau lanjut coding
+
+index.php -> buat mode development
+application/config/database.php -> db_debug set ke true

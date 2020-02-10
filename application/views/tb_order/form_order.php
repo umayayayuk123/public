@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
-                                          <button type="submit" name="submit" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Tambah Daftar Belanja</button> 
+                                          <button type="submit" name="submit" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Tambah Daftar Pesanan</button> 
                                         </div>
                                     </div>
                                 </form>

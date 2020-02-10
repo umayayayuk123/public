@@ -20,7 +20,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Tanggal</th>
-                                <th>Customer</th>
+                                <th>Karyawan</th>
                                 <th>Operator</th>
                                 <th>Total</th>
                                 <th>Aksi</th>
@@ -31,7 +31,7 @@
                             <tr class="gradeU">
                                 <td><?php echo $no ?></td>
                                 <td><?php echo $r->tanggal_kas ?></td>
-                                <td><?php echo $r->nama_customer ?></td>
+                                <td><?php echo $r->nama_karyawan ?></td>
                                 <td><?php echo get_user($r->operator_id,'nama_lengkap') ?></td>
                                 <td>
                                     <?php

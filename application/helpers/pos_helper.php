@@ -32,6 +32,11 @@ function get_tb_order($id,$record){
     $q = $CI->db->get_where('barang_pesanan', array('barang_pesanan_id' => $id))->row_array();
     return $q[$record];
 }
+function get_data_job_karyawan($id,$record){
+    $CI =& get_instance();
+    $q = $CI->db->get_where('data_job_karyawan', array('job_karyawan_id' => $id))->row_array();
+    return $q[$record];
+}
 function chek_session_login()
 {
     $CI= & get_instance();

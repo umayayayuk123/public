@@ -38,7 +38,7 @@
                     <tr>
                         <th width="30%">Customer</th>
                         <td width="5%">:</td>
-                        <td><?php echo $transaksi_aruskas['nama_customer'] ?></td>
+                        <td><?php echo $transaksi_aruskas['nama_karyawan'] ?></td>
                     </tr>
                     <tr>
                         <th width="30%">Operator</th>
@@ -59,7 +59,7 @@
                     <?php $no=1; $total=0; foreach ($detail_aruskas as $r){ ?>
                         <tr class="gradeU">
                             <td><?php echo $no ?></td>
-                            <td><?php echo get_transaksi_aruskas($r->barang_id,'nama_customer') ?></td>
+                            <td><?php echo get_transaksi_aruskas($r->barang_id,'nama_karyawan') ?></td>
                             <td><?php echo $r->qty ?></td>
                             <td>Rp. <?php echo number_format($r->harga,2) ?></td>
                             <td>Rp. <?php echo number_format($r->qty*$r->harga,2) ?></td>

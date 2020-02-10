@@ -19,11 +19,12 @@ class data_job_karyawan extends CI_Controller{
     {
         if(isset($_POST['submit'])){
             // proses barang
-            $nama_karyawan_job       =   $this->input->post('nama_karyawan_job');
-            $job_karyawan_id   =   $this->input->post('job_karyawan_id');
+            
+            $kategori_job_id  =   $this->input->post('kategori_job_id');
+            $nama_karyawan_job      =   $this->input->post('nama_karyawan_job');
             $harga      =   $this->input->post('harga');
-            $data       = array('nama_karyawan_job'=>$nama_karyawan_job,
-                                'job_karyawan_id'=>$job_karyawan_id,
+            $data       = array('kategori_job_id'=>$kategori_job_id,
+                                'nama_karyawan_job'=>$nama_karyawan_job,
                                 'harga'=>$harga);
             $this->model_data_job_karyawan->post($data);
             redirect('data_job_karyawan');
@@ -31,8 +32,8 @@ class data_job_karyawan extends CI_Controller{
         else{
             $this->load->model('model_data_kategori_job');
             $data['data_kategori_job']=  $this->model_data_kategori_job->tampilkan_data()->result();
-            
-        //$this->load->view('barang/form_input',$data);
+           
+            //$this->load->view('barang/form_input',$data);
             $this->template->load('template','data_job_karyawan/form_input',$data);
         }
     }
@@ -42,21 +43,21 @@ class data_job_karyawan extends CI_Controller{
     {
        if(isset($_POST['submit'])){
             // proses barang
-            $id         =   $this->input->post('kategori_job_id');
-            $nama_karyawan_job       =   $this->input->post('nama_karyawan_job');
-            $data_kategori_job   =   $this->input->post('data_kategori_job');
+            $id         =   $this->input->post('id');
+            $kategori_job_id  =   $this->input->post('kategori_job_id');
+            $nama_karyawan_job      =   $this->input->post('nama_karyawan_job');
             $harga      =   $this->input->post('harga');
-            $data       = array('nama_karyawan_job'=>$nama_karyawan_job,
-                                'kategori_job_id'=>$kategori,
+            $data       = array('kategori_job_id'=>$kategori_job_id,
+                                'nama_karyawan_job'=>$nama_karyawan_job,
                                 'harga'=>$harga);
-            $this->model_data_job_karyawan->edit($data,$id);
+            $this->model_data_job_karyawan->edit($data,$job_karyawan_id);
             redirect('data_job_karyawan');
         }
         else{
-            $id=  $this->uri->segment(3);
+            $job_karyawan_id=  $this->uri->segment(3);
             $this->load->model('model_data_kategori_job');
             $data['data_kategori_job']   =  $this->model_data_kategori_job->tampilkan_data()->result();
-            $data['record']     =  $this->model_data_job_karyawan->get_one($id)->row_array();
+            $data['record']     =  $this->model_data_job_karyawan->get_one($job_karyawan_id)->row_array();
             //$this->load->view('barang/form_edit',$data);
             $this->template->load('template','data_job_karyawan/form_edit',$data);
         }
@@ -65,8 +66,8 @@ class data_job_karyawan extends CI_Controller{
     
     function delete()
     {
-        $id=  $this->uri->segment(3);
-        $this->model_data_job_karyawan->delete($id);
+        $job_karyawan_id=  $this->uri->segment(3);
+        $this->model_data_job_karyawan->delete($data_job_karyawan);
         redirect('data_job_karyawan');
     }
 }

@@ -19,10 +19,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Kategori</label>
-                                    <select name="kategori" class="form-control" required>
-                                        <?php foreach ($data_kategori_job as $k) {
-                                            echo "<option value='$k->kategori_job_id'>$k->nama_kategori_job</option>";
-                                        } ?>
+                                    <select name="kategori_job_id" id="kategori_job_id" class="form-control">
+                                        <option value="">- Pilih Kategori JOB-</option>
+                                        <?php foreach ($data_kategori_job as $b) { ?>
+                                        <option value="<?=$b->kategori_job_id?>"><?=$b->nama_kategori_job?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group">

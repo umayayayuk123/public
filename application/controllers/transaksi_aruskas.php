@@ -3,7 +3,7 @@ class transaksi_aruskas extends ci_controller{
     
         function __construct() {
         parent::__construct();
-        $this->load->model(array('model_transaksi_aruskas','model_transaksi_aruskas'));
+        $this->load->model(array('model_data_job_karyawan','model_transaksi_aruskas'));
         chek_session();
     }
     
@@ -16,8 +16,8 @@ class transaksi_aruskas extends ci_controller{
         }
         else
         {
-            $data['model_data_job_karyawan']=  $this->model_data_job_karyawan->tampil_data();
-            $data['detail']= $this->model_transaksi_aruskas->tampilkan_detail_transaksi(0)->result();
+            $data['data_job_karyawan']=  $this->model_data_job_karyawan->tampil_data()->result();
+            $data['detail_arus_kas']= $this->model_transaksi_aruskas->tampilkan_detail_arus_kas(0)->result();
             $this->template->load('template','transaksi_aruskas/form_transaksi',$data);
         }
     }
@@ -33,13 +33,13 @@ class transaksi_aruskas extends ci_controller{
     
     function selesai_belanja()
     {
-        $nama_customer = $this->input->post('nama_customer');
+        $nama_karyawan = $this->input->post('nama_karyawan');
         $tanggal=date('Y-m-d');
         
         $data=array(
             'operator_id'=>$this->session->userdata('operator_id'),
-            'tanggal_kas'=>$tanggal_kas,
-            'nama_customer'=>$nama_customer,
+            'tanggal_kas'=>$tanggal,
+            'nama_karyawan'=>$nama_karyawan,
         );
         $this->model_transaksi_aruskas->selesai_belanja($data);
         redirect('transaksi_aruskas');
@@ -66,10 +66,10 @@ class transaksi_aruskas extends ci_controller{
         }
     }
     
-    public function detail_transaksi_by_id($id)
+    public function detail_arus_kas_by_id($id)
     {
-        $data['transaksi_aruskas'] = $this->db->get_where('transaksi_aruskas', array('transaksi_id' => $id ))->row_array();
-        $data['detail_transaksi'] = $this->db->get_where('transaksi_detail', array('aruskas_id' => $id ))->result();
+        $data['transaksi_aruskas'] = $this->db->get_where('transaksi_aruskas', array('aruskas_id' => $id ))->row_array();
+        $data['detail_arus_kas'] = $this->db->get_where('detail_arus_kas', array('aruskas_id' => $id ))->result();
         $this->template->load('template','transaksi_aruskas/detail_transaksi',$data);
     }
     function excel($id)
@@ -77,7 +77,7 @@ class transaksi_aruskas extends ci_controller{
         $data['transaksi_aruskas'] = $this->db->get_where('transaksi_aruskas', array('aruskas_id' => $id ))->row_array();
         header("Content-type=appalication/vnd.ms-excel");
         header("content-disposition:attachment;filename=laporantransaksi_".$data['transaksi_aruskas']['nama_customer']."_.xls");
-        $data['detail_transaksi'] = $this->db->get_where('transaksi_detail', array('aruskas_id' => $id ))->result();
+        $data['detail_arus_kas'] = $this->db->get_where('detail_arus_kas', array('aruskas_id' => $id ))->result();
         $this->load->view('transaksi_aruskas/laporan_excel',$data);
     }
     

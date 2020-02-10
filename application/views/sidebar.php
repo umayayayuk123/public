@@ -94,7 +94,7 @@
                     </ul>       
 
                 <li>
-                    <a href="<?php echo base_url().'tb_order/list_order'?>"><i class="glyphicon glyphicon-file"></i> Laporan</a>
+                    <a href="<?php echo base_url().'arus_kas'?>"><i class="glyphicon glyphicon-file"></i> Laporan</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url().'karyawan'?>"><i class="fa fa-user-md"></i> Karyawan </a>
@@ -148,21 +148,6 @@
                 <li>
                     <a href="<?php echo base_url().'auth/logout'?>"><i class="fa fa-sign-out fa-fw"></i> Log Out </a>
                 </li>
-
-
-                <?php }elseif($operator_id_akses=="HA03"){ ?>
-                <!--customer-->
-                <li>
-                <a href="<?php echo site_url('halaman_pesanan') ?>"><i class="fa fa-dashboard"></i> Dashboard</a>
-            </li>
-                 <li>
-                <a href="<?php echo base_url().''?>"><i class="glyphicon glyphicon-envelope"></i>Pesanan<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="<?php echo base_url().'lihat_pesanan'?>">Lihat Pesanan Saya</a>
-                    </li>   
-                    
-                    </ul>
                     <li>
                     <a href="<?php echo base_url().'auth/logout'?>"><i class="fa fa-sign-out fa-fw"></i> Log Out </a>
                 </li>

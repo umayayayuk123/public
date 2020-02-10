@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                         <div class="panel-heading">
-                                <center><img src="assets/img/logo.png"></center>
+                                <center><img src=""></center>
 
                             </div>
                             <div class="panel-body">
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Kategori JOB</label>
-                                    <select name="kategori" class="form-control">
+                                    <select name="kategori_job_id" class="form-control">
                                         <?php foreach ($data_kategori_job as $k) {
                                             echo "<option value='$k->kategori_job_id'";
                                             echo $record['kategori_job_id']==$k->kategori_job_id?'selected':'';

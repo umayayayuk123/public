@@ -24,9 +24,9 @@
                         	<div class="panel-body" id="panel-simpan">
 								<div class="form-group">
 									<form class="form-horizontal" method="post" action="<?php echo site_url('transaksi_aruskas/selesai_belanja'); ?>">
-									    <label class="col-sm-2 control-label">Nama Customer</label>
+									    <label class="col-sm-2 control-label">Nama Karyawan</label>
 									    <div class="col-sm-10">
-									      <input name="nama_customer" placeholder="Masukkan nama customer" class="form-control" required>
+									      <input name="nama_karyawan" placeholder="Masukkan nama karyawan" class="form-control" required>
 									    </div>
 
 									    <div class="col-md-12">
@@ -40,9 +40,14 @@
                             <div class="panel-body" id="panel-barang">
                                 <?php echo form_open('transaksi_aruskas', array('class'=>'form-horizontal')); ?>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Nama Barang</label>
+                                        <label class="col-sm-2 control-label">Jenis Jasa</label>
                                         <div class="col-sm-10">
-                                          <input list="barang" name="barang" placeholder="masukan jenis arus kas" class="form-control">
+                                        <select name="nama_karyawan_job" id="nama_karyawan_job" class="form-control">
+                                            <option value="">- Pilih Jenis Jasa -</option>
+                                            <?php foreach ($data_job_karyawan as $kar) { ?>
+                                               <option value="<?=$kar->job_karyawan_id?>"><?=$kar->nama_karyawan_job?></option>
+                                            <?php } ?>
+                                        </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -53,17 +58,12 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
-                                          <button type="submit" name="submit" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Tambah Daftar Belanja</button> 
+                                          <button type="submit" name="submit" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Tambah Daftar Arus Kas</button> 
                                         </div>
                                     </div>
                                 </form>
 
-                                <datalist id="data_job_karyawan">
-                                    <?php foreach ($data_job_karyawan->result() as $b) {
-                                        echo "<option value='$b->nama_karyawan_job'>";
-                                    } ?>
-                                    
-                                </datalist>
+                                
                             </div>
                         </div>
                         <!-- /. PANEL  -->
@@ -85,10 +85,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php $no=1; $total=0; foreach ($detail as $r){ ?>
+                                        <?php $no=1; $total=0; foreach ($detail_arus_kas as $r){ ?>
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
-                                                <td><?php echo $r->nama_karyawan_job.' - '.anchor('transaksi/hapusitem/'.$r->t_aruskas_id,'Hapus',array('style'=>'color:red;')) ?></td>
+                                                <td><?php echo $r->nama_karyawan_job.' - '.anchor('transaksi_aruskas/hapusitem/'.$r->t_aruskas_id,'Hapus',array('style'=>'color:red;')) ?></td>
                                                 <td><?php echo $r->qty ?></td>
                                                 <td>Rp. <?php echo number_format($r->harga,2) ?></td>
                                                 <td>Rp. <?php echo number_format($r->qty*$r->harga,2) ?></td>
