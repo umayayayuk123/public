@@ -40,7 +40,7 @@ class model_transaksi_aruskas extends ci_model
     
     function selesai_belanja($data)
     {
-        $this->db->insert('data_job_karyawan',$data);
+        $this->db->insert('transaksi_aruskas',$data);
         $last_id=  $this->db->query("select aruskas_id from transaksi_aruskas order by aruskas_id desc")->row_array();
         $this->db->query("update detail_arus_kas set aruskas_id='".$last_id['aruskas_id']."' where status='0'");
         $this->db->query("update detail_arus_kas set status='1' where status='0'");
