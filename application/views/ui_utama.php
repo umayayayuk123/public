@@ -101,6 +101,7 @@
                       
                       <center>
                        <br>
+                       
                         <a href="<?=site_url('Auth/login')?>" class="hvr-bounce-to-right btn btn-default"> Login
                           Administrasi</a>
                         <a class="hvr-bounce-to-right btn btn-default" data-toggle="modal"

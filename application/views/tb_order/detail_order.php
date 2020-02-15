@@ -14,7 +14,7 @@
                 <div class="row" >
                     <div class="col-md-12">
                         <div class="pull-right" >
-                            <a href="<?php echo site_url('tb_order/excel/'.$tb_order['no_nota']); ?>" id="tombol-simpan" class="btn btn-success"  ><i class="fa fa-print" ></i> Cetak </a>
+                            <a href="<?php echo site_url('tb_order/pdf/'.$tb_order['no_nota']); ?>" id="tombol-simpan" class="btn btn-success"  ><i class="fa fa-print" ></i> Cetak </a>
                         </div> 
 
                     </div>      

@@ -3,6 +3,11 @@ TRANSAKSI UD EASY PRINTING
 ========================
 <br>
 <table width="100%" cellpadding="10" cellspacing="0" >
+<tr>
+        <th width="30%" align="left">Nomor Transaksi</th>
+        <td width="5%">:</td>
+        <td><?php echo $tb_order['no_nota'] ?></td>
+    </tr>
     <tr>
         <th width="30%" align="left">Tanggal Transaksi</th>
         <td width="5%">:</td>

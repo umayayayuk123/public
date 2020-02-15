@@ -1,3 +1,10 @@
+<style>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
@@ -11,7 +18,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                         <div class="panel-heading">
-                                <center><img src="assets/img/logo.PNG"></center>
+                                <center><img class ="responsive" src="assets/img/logo.PNG"></center>
 
                             </div>
                             

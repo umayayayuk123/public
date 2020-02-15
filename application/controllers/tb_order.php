@@ -84,36 +84,58 @@ class tb_order extends ci_controller{
     
    function pdf()
     {
+        $id = $this->uri->segment(3);
+        $temp_rec = $this->db->get_where('tb_order', array('no_nota' => $id ));
+        
+        $num_rows = $temp_rec->num_rows();
+        $data=$temp_rec->row();
         $this->load->library('cfpdf');
-        $pdf=new FPDF('P','mm','A4');
+        $pdf=new FPDF('L','mm','A4');
         $pdf->AddPage();
         $pdf->SetFont('Arial','B','L');
         $pdf->SetFontSize(14);
-        $pdf->Text(10, 10, 'TRANSAKSI UD EASY PRINTING : '.date('d F Y', strtotime($tgl)));
-        $pdf->SetFont('Arial','B','L');
-        $pdf->SetFontSize(10);
+        $pdf->Text(100, 10, 'TRANSAKSI UD EASY PRINTING');
+        $pdf->Text(80, 16, 'Jl. Panglima Polim No.50 A Sumbang Bojonegoro');
         $pdf->Cell(10, 10,'','',1);
-        $pdf->Cell(10, 7, 'No', 1,0);
-        $pdf->Cell(27, 7, 'Tanggal', 1,0);
-        $pdf->Cell(60, 7, 'Operator', 1,0);
-        $pdf->Cell(48, 7, 'Total Transaksi', 1,1);
-        // tampilkan dari database
-        $pdf->SetFont('Arial','','L');
-        $data=  $this->model_order->laporan_default();
+        $pdf->SetFont('Arial','B','L');
+        $pdf->Text(10, 30, 'Nomor Transaksi');
+        $pdf->Text(60,30, ' : '.$data->no_nota,0,1,'L');
+        $pdf->Text(10, 38, 'Tanggal Transaksi');
+        $pdf->Text(60,38, ' : '.$data->tanggal_order,0,1,'L');
+        $pdf->Text(10, 46, 'Nama Customer');
+        $pdf->Text(60,46, ' : '.$data->nama_customer,0,1,'L');
+        $pdf->Text(10, 54, 'Operator');
+        $pdf->Text(60,54, ' : '.get_user($data->operator_id,'nama_lengkap'));
+        $pdf->cell(10, 40,'','',1);
+        $pdf->SetFontSize(14);
+        
+        $pdf->Cell(10, 10,'NO',1,0);
+        $pdf->Cell(60, 10,'Nama Barang',1,0);
+        $pdf->Cell(45, 10,'QTY',1,0);
+        $pdf->Cell(60, 10,'Harga',1,0);
+        $pdf->Cell(65, 10,'SUB TOTAL',1,1);
+        
+        
         $no=1;
         $total=0;
+        $data = $this->db->get_where('detail_order', array('no_nota' => $id ));
         foreach ($data->result() as $r)
         {
-            $pdf->Cell(10, 7, $no, 1,0);
-            $pdf->Cell(27, 7, $r->tanggal_order, 1,0);
-            $pdf->Cell(60, 7, $r->nama_lengkap, 1,0);
-            $pdf->Cell(48, 7, $r->total, 1,1);
+            
+            $pdf->Cell(10, 10, $no, 1,0);
+            $pdf->Cell(60, 10, get_tb_order($r->barang_pesanan_id,'nama_barang_pesanan'), 1,0);
+            $pdf->Cell(45, 10, $r->qty, 1,0);
+            $pdf->Cell(60, 10, number_format($r->harga,2), 1,0);
+            $pdf->Cell(65, 10, number_format($r->qty*$r->harga,2),1,1);
             $no++;
-            $total=$total+$r->total;
         }
-        // end
-        $pdf->Cell(97,7,'Total',1,0,'R');
-        $pdf->Cell(48,7,$total,1,0);
+        $jml_qty = $this->model_order->hitung_order_by_id($id)->row_array();
+        $pdf->Cell(175,10, "TOTAL", 1, 0);
+        $pdf->Cell(65,10, "Rp. ".number_format($jml_qty['total'],2), 1, 1);
+
         $pdf->Output();
+        
+
     }
+    
 }

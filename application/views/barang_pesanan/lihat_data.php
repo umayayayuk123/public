@@ -1,4 +1,9 @@
-                <div class="row">
+<style>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>                <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
                             C-POS (Cashier Point of Sale) <small>Data Barang Pesanan</small>
@@ -11,7 +16,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                         <div class="panel-heading">
-                                <center><img src="assets/img/logo.png"></center>
+                                <center><img class="responsive" src="assets/img/logo.png"></center>
 
                             </div>
                             <div class="panel-heading">

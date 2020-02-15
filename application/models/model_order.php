@@ -23,6 +23,15 @@ class model_order extends ci_model
                                 and tb_order.no_nota = $id
         ");
     }
+    function cetak_struk()
+    {
+        return $this->db->query("
+                                SELECT * from tb_order,detail_order,barang_pesanan
+                                where 
+                                tb_order.no_nota = detail_order.no_nota
+                                and tb_order.no_nota 
+        ");
+    }
     function tampilkan_detail_order($status)
     {
         $query  ="SELECT td.t_detail_order_id,td.qty,td.harga,b.nama_barang_pesanan

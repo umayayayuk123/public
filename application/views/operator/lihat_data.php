@@ -1,3 +1,10 @@
+<style>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
@@ -11,7 +18,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                         <div class="panel-heading">
-                                <center><img src="assets/img/logo.png"></center>
+                                <center><img class="responsive" src="assets/img/logo.png"></center>
 
                             </div> 
                             <div class="panel-heading">
@@ -19,7 +26,7 @@
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <table class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                                         <thead>
                                             <tr>
                                                 <th>No.</th>

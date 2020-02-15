@@ -1,3 +1,9 @@
+<style>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>            
              <style type="text/css">
                  .kolom{
                     padding: 6px 6px 6px 6px;
@@ -16,7 +22,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                          <div class="panel-heading">
-                                <center><img src="assets/img/logo.png"></center>
+                                <center><img class="responsive" src="assets/img/logo.png"></center>
 
                             </div>  
                             <div class="panel-heading">

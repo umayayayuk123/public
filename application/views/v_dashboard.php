@@ -1,3 +1,9 @@
+<style>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 <?php   
 function tanggal_indo($tanggal, $cetak_hari = false)
 {
@@ -47,7 +53,7 @@ function tanggal_indo($tanggal, $cetak_hari = false)
 </div> 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <center><img src="<?php echo base_url() ?>assets/img/logo.png"></center>
+        <center><img class="responsive" src="<?php echo base_url() ?>assets/img/logo.png"></center>
     </div>         
     <div class="panel-body">
         <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
