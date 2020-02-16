@@ -1,13 +1,20 @@
+
 <html>
 
 <head>
+<style>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
   <meta charset="UTF-8">
   <title>Beranda | Easy Printing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   </script>
   <meta charset="utf-8">
   <link rel="stylesheet" href="assets/css/w31.css">
-  <link rel="icon" href="assets/img/logo.jpg" type="image/x-icon">
+  <link rel="icon" href="assets/img/logo.jpg" type="image/x-icon" class="responsive">
   <link rel="stylesheet" href="assets/css/boot1.css">
   <link rel="stylesheet" href="assets/css/font1-awesome.min.css">
   <link rel="stylesheet" href="assets/css/hover1.css">
@@ -112,18 +119,18 @@
             <div class="col-md-4">
 
               <div class="w3-content w3-section" style="max-width:500px">
-                <img class="mySlides" src="assets/img/5.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/11.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/2.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/123.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/3.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/4.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/6.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/7.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/8.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/12.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/13.jpg" style="width:100%">
-                <img class="mySlides" src="assets/img/14.jpg" style="width:100%">
+                <img class="mySlides" src="assets/img/5.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/11.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/2.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/123.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/3.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/4.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/6.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/7.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/8.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/12.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/13.jpg" style="width:100%" class="responsive">
+                <img class="mySlides" src="assets/img/14.jpg" style="width:100%" class="responsive">
               </div>
             </div>
           </div>
@@ -140,7 +147,7 @@
       <td colspan="4">
         <label for=""
           style="position: absolute;margin-left: 70px;margin-top: 10px;font-family: arial;color: white"></label>
-        <img src="assets/img/foot.png" alt="" style="width: 100%;height: 40%">
+        <img src="assets/img/foot.png" class="responsive" alt="" style="width: 100%;height: 40%">
       </td>
     </tr>
   </table>

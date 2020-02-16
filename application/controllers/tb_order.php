@@ -94,8 +94,8 @@ class tb_order extends ci_controller{
         $pdf->AddPage();
         $pdf->SetFont('Arial','B','L');
         $pdf->SetFontSize(14);
-        $pdf->Text(100, 10, 'TRANSAKSI UD EASY PRINTING');
-        $pdf->Text(80, 16, 'Jl. Panglima Polim No.50 A Sumbang Bojonegoro');
+        $pdf->Text(100, 10, 'BUKTI TRANSAKSI UD EASY PRINTING');
+        $pdf->Text(87, 16, 'Jl. Panglima Polim No.50 A Sumbang Bojonegoro');
         $pdf->Cell(10, 10,'','',1);
         $pdf->SetFont('Arial','B','L');
         $pdf->Text(10, 30, 'Nomor Transaksi');
